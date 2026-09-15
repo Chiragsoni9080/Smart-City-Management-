@@ -239,7 +239,7 @@ export default function DashboardPage({ onLogout }: DashboardPageProps) {
       setWidgetLoading(true)
       setWidgetError(null)
       try {
-        let url = `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}`/api/weather'
+        let url = `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/weather`
         const coordsStr = localStorage.getItem('scm_location_coords')
         if (coordsStr) {
           const coords = JSON.parse(coordsStr)
@@ -356,7 +356,7 @@ export default function DashboardPage({ onLogout }: DashboardPageProps) {
     // Fetch News Feed
     const fetchNews = async () => {
       try {
-        const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}`/api/news')
+        const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/news`)
         const data = await res.json()
         if (data.success && data.data) {
           setNewsFeed(data.data.slice(0, 2))

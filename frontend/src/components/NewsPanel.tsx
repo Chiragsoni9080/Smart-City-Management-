@@ -107,7 +107,7 @@ export default function NewsPanel() {
     setLoading(true)
     try {
       // 1️⃣ Try live News via backend proxy
-      const url = new URL(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}`/api/news/live')
+      const url = new URL(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/news/live`)
       if (search.trim()) url.searchParams.append('q', search.trim())
       
       const liveRes = await fetch(url.toString())
@@ -124,7 +124,7 @@ export default function NewsPanel() {
 
     try {
       // 2️⃣ Try local MongoDB DB news (admin-created articles)
-      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}`/api/news')
+      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/news`)
       if (response.ok) {
         const result = await response.json()
         if (result.success && result.data && result.data.length > 0) {

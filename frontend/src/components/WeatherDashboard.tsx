@@ -66,7 +66,7 @@ export default function WeatherDashboard() {
     setLoading(true);
     setError(null);
     try {
-      let url = `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}`/api/weather';
+      let url = `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/weather`;
       if (params.lat !== undefined && params.lon !== undefined) {
         url += `?lat=${params.lat}&lon=${params.lon}`;
       } else if (params.city) {

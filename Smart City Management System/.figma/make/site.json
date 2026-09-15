@@ -1,0 +1,10 @@
+{
+  "description": "Manage and monitor smart city services efficiently with real-time statistics and features designed for urban planners and city administrators.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

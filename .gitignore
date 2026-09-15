@@ -7,10 +7,22 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies
 node_modules
+**/node_modules
+
+# Build output
 dist
 dist-ssr
-*.local
+
+# Environment files - NEVER commit these
+.env
+.env.local
+.env.*.local
+frontend/.env
+frontend/.env.local
+backend/.env
+backend/.env.local
 
 # Editor directories and files
 .vscode/*
@@ -18,5 +30,8 @@ dist-ssr
 .idea
 .DS_Store
 *.sw?
+*.local
 
-.env
+# Temp / misc
+fix.cjs
+SmartCityManagement_NoNodeModules.zip

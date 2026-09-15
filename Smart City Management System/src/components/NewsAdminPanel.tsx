@@ -155,7 +155,7 @@ export default function NewsAdminPanel() {
   const fetchNews = async () => {
     setLoading(true)
     try {
-      const response = await fetch('http://localhost:5000/api/news?adminMode=true', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}`/api/news?adminMode=true', {
         headers: {
           'x-user-role': 'admin',
           'x-user-email': 'admin@municipality.gov'
@@ -241,8 +241,8 @@ export default function NewsAdminPanel() {
 
     try {
       const url = editingId
-        ? `http://localhost:5000/api/news/${editingId}`
-        : 'http://localhost:5000/api/news'
+        ? `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}`/api/news/${editingId}`
+        : `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}`/api/news'
       const method = editingId ? 'PUT' : 'POST'
 
       const response = await fetch(url, {
@@ -290,7 +290,7 @@ export default function NewsAdminPanel() {
 
   const handleDelete = async (id: string) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/news/${id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}`/api/news/${id}`, {
         method: 'DELETE',
         headers: {
           'x-user-role': 'admin',
@@ -316,7 +316,7 @@ export default function NewsAdminPanel() {
   const handleTogglePublish = async (article: NewsArticle) => {
     const id = article._id || article.id
     try {
-      const response = await fetch(`http://localhost:5000/api/news/${id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}`/api/news/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
